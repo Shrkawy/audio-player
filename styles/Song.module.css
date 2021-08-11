@@ -1,0 +1,18 @@
+.song {
+  all: unset;
+  cursor: pointer;
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  border-bottom: 2px solid var(--hover);
+  border-radius: 0.1rem;
+}
+
+/* .song div {
+  justify-self: center;
+} */
+
+.song:hover {
+  background-color: var(--hover);
+}
