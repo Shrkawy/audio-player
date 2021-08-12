@@ -2,13 +2,15 @@ import { useContext } from "react";
 import Image from "next/image";
 import { PlayerContext } from "../context/player-context";
 
+import styles from "../styles/AudioPlayer.module.css";
+
 const CurrentSong = () => {
   const { playerState } = useContext(PlayerContext);
   const currentSong = playerState.songs[playerState.currentSong];
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div style={{ position: "relative", width: "4rem", height: "4rem" }}>
+    <div className={styles.current}>
+      <div>
         <Image
           src={currentSong.cover}
           layout="fill"

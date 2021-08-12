@@ -3,6 +3,8 @@ import { PlayerContext } from "../context/player-context";
 import { ActionType } from "../hooks/action";
 import { Left, Pause, Play, Right } from "./icons";
 
+import styles from "../styles/AudioPlayer.module.css";
+
 const AudioControllers = () => {
   const {
     playerState: { songs, currentSong, readyToPlay, isPlaying },
@@ -39,40 +41,20 @@ const AudioControllers = () => {
 
   return (
     <div>
-      <div className="audio-controls">
-        <button
-          type="button"
-          className="prev"
-          aria-label="Previous"
-          onClick={toPrevSong}
-        >
+      <div className={styles.controllers}>
+        <button type="button" aria-label="Previous" onClick={toPrevSong}>
           <Left />
         </button>
         {isPlaying ? (
-          <button
-            type="button"
-            className="pause"
-            aria-label="Pause"
-            onClick={handlePause}
-          >
+          <button type="button" aria-label="Pause" onClick={handlePause}>
             <Pause />
           </button>
         ) : (
-          <button
-            type="button"
-            className="play"
-            aria-label="Play"
-            onClick={handlePlay}
-          >
+          <button type="button" aria-label="Play" onClick={handlePlay}>
             <Play />
           </button>
         )}
-        <button
-          type="button"
-          className="next"
-          aria-label="Next"
-          onClick={toNextSong}
-        >
+        <button type="button" aria-label="Next" onClick={toNextSong}>
           <Right />
         </button>
       </div>

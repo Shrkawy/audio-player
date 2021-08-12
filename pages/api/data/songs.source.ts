@@ -1,4 +1,4 @@
-import { Song } from "../get-songs";
+import { Song } from "../../../models/Song";
 
 export const songs: Song[] = [
   {
@@ -60,7 +60,7 @@ export const songs: Song[] = [
   {
     id: 7,
     name: "Zayaha Meen",
-    artist: "’Mohamed Hamaki",
+    artist: "Mohamed Hamaki",
     source:
       "https://www.dlxfile.com/dl/mem/mohamed-hamaki/singles/Dndnha.Com.Mohamed.Hamaki.Zayaha.Meen.mp3",
     cover:

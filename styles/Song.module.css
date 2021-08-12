@@ -4,6 +4,7 @@
   color: var(--text-color);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
   width: 100%;
   border-bottom: 2px solid var(--hover);
   border-radius: 0.1rem;

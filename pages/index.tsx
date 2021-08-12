@@ -38,7 +38,7 @@ export default function Home({ songs }: HomeProps) {
           year={song.year}
         />
       ))}
-      {playerState.songs.length > 0 && <AudioPlayer />}
+      
     </div>
   );
 }
