@@ -2,17 +2,18 @@
   all: unset;
   cursor: pointer;
   color: var(--text-color);
+  padding: 0.2rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 3fr 3fr 1fr;
   align-items: center;
   width: 100%;
   border-bottom: 2px solid var(--hover);
   border-radius: 0.1rem;
 }
 
-/* .song div {
-  justify-self: center;
-} */
+.song img {
+  border-radius: 0.2rem;
+}
 
 .song:hover {
   background-color: var(--hover);

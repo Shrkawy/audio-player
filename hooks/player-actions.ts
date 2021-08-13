@@ -4,7 +4,8 @@ export enum ActionType {
   PlayPause,
   SetSongs,
   CurrentSong,
-  setProgress,
+  SongFullTime,
+  SetProgress,
   ReadyToPlay,
 }
 
@@ -29,13 +30,19 @@ export interface PlayPause {
 }
 
 export interface SetProgress {
-  type: ActionType.setProgress;
-  payload: number;
+  type: ActionType.SetProgress;
+  payload: number | undefined;
+}
+
+export interface SongFullTime {
+  type: ActionType.SongFullTime;
+  payload: number | undefined;
 }
 
 export type PlayerActions =
   | Songs
   | CurrentSong
+  | SongFullTime
   | ReadyToPlay
   | PlayPause
   | SetProgress;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { PlayerContext } from "../context/player-context";
-import { ActionType } from "../hooks/action";
+import { ActionType } from "../hooks/player-actions";
 
 import styles from "../styles/Song.module.css";
 

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import { usePlayer } from "../hooks/audio-player-hook";
 import { PlayerContext } from "./player-context";
 
@@ -8,6 +8,7 @@ interface SongsProviderProps {
 
 const SongsProvider = ({ children }: SongsProviderProps) => {
   const { playerState, dispatch } = usePlayer();
+
   return (
     <PlayerContext.Provider value={{ playerState, dispatch }}>
       {children}

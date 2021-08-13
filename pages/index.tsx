@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Song as SongType } from "../models/Song";
 import { useContext, useEffect } from "react";
-import { ActionType } from "../hooks/action";
+import { ActionType } from "../hooks/player-actions";
 import Song from "../components/Song";
 import AudioPlayer from "../components/AudioPlayer";
 import { PlayerContext } from "../context/player-context";

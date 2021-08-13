@@ -1,5 +1,5 @@
 import { createContext, Dispatch } from "react";
-import { PlayerActions } from "../hooks/action";
+import { PlayerActions } from "../hooks/player-actions";
 import { initPlayerState, PlayerState } from "../hooks/audio-player-hook";
 
 export const PlayerContext = createContext<{
