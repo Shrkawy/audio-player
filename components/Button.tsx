@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button = ({ children, label, onClick }: ButtonProps) => {
   return (
-    <button type="button" aria-label={label} onClick={onClick}>
+    <button type="button" aria-label={label} title={label} onClick={onClick}>
       {children}
     </button>
   );

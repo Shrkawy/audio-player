@@ -1,5 +1,5 @@
 import { ReactNode, useRef } from "react";
-import { usePlayer } from "../hooks/audio-player-hook";
+import { usePlayer } from "../hooks/audio-player-context-hook";
 import { PlayerContext } from "./player-context";
 
 interface SongsProviderProps {

@@ -1,81 +1,26 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { PlayerContext } from "../context/player-context";
-import { ActionType } from "../hooks/player-actions";
+import { useControllers } from "../hooks/audio-controllers-hook";
 import { Left, Pause, Play, Right } from "./icons";
+import Button from "./Button";
 
 import styles from "../styles/AudioPlayer.module.css";
-import Button from "./Button";
+import ProgressBar from "./ProgressBar";
 
 const AudioControllers = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [audioState, setAudioState] = useState({ isPlaying: false });
+
   const {
     playerState: { songs, currentSong },
-    dispatch,
   } = useContext(PlayerContext);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.addEventListener("play", () => {
-        setAudioState((curr) => ({
-          ...curr,
-          isPlaying: true,
-        }));
-      });
-      audio.addEventListener("pause", () => {
-        setAudioState((curr) => ({
-          ...curr,
-          isPlaying: false,
-        }));
-      });
-    }
-
-    return () => {
-      audio?.removeEventListener("play", () => {
-        setAudioState((curr) => ({
-          ...curr,
-          isPlaying: true,
-        }));
-      });
-      audio?.removeEventListener("pause", () => {
-        setAudioState((curr) => ({
-          ...curr,
-          isPlaying: false,
-        }));
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    if (audioState.isPlaying) {
-      audioRef.current?.play();
-    }
-  }, [currentSong, audioState.isPlaying]);
-
-  const toNextSong = (): void => {
-    const songsIndex: number = songs.length;
-
-    if (currentSong + 1 === songsIndex) {
-      dispatch({ type: ActionType.CurrentSong, payload: 0 });
-    } else {
-      dispatch({ type: ActionType.CurrentSong, payload: currentSong + 1 });
-    }
-  };
-
-  const toPrevSong = (): void => {
-    const songsIndex: number = songs.length;
-
-    if (currentSong === 0) {
-      dispatch({ type: ActionType.CurrentSong, payload: songsIndex - 1 });
-    } else {
-      dispatch({ type: ActionType.CurrentSong, payload: currentSong - 1 });
-    }
-  };
-
-  const handlePlayPause = (): void => {
-    audioState.isPlaying ? audioRef.current?.pause() : audioRef.current?.play();
-  };
+  const {
+    audioState,
+    handlePlayPause,
+    toNextSong,
+    toPrevSong,
+    convertDuration,
+  } = useControllers(audioRef);
 
   return (
     <div>
@@ -96,6 +41,9 @@ const AudioControllers = () => {
           <Right />
         </Button>
         <audio src={songs[currentSong].source} ref={audioRef} />
+        {convertDuration(audioState.duration)}
+        <ProgressBar max={audioState.duration} value={audioState.currTime} />
+        {convertDuration(audioState.currTime)}
       </div>
     </div>
   );

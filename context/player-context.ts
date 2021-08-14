@@ -1,6 +1,6 @@
 import { createContext, Dispatch } from "react";
 import { PlayerActions } from "../hooks/player-actions";
-import { initPlayerState, PlayerState } from "../hooks/audio-player-hook";
+import { initPlayerState, PlayerState } from "../hooks/audio-player-context-hook";
 
 export const PlayerContext = createContext<{
   playerState: PlayerState;

@@ -1,0 +1,145 @@
+/* .ProgressBar[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  background-image: linear-gradient(#ff4500, #ff4500);
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+}
+
+.ProgressBar[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ff4500;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.ProgressBar[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ff4500;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.ProgressBar[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ff4500;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.ProgressBar[type="range"]::-webkit-slider-thumb:hover {
+  background: #ff0200;
+}
+
+.ProgressBar[type="range"]::-moz-range-thumb:hover {
+  background: #ff0200;
+}
+
+.ProgressBar[type="range"]::-ms-thumb:hover {
+  background: #ff0200;
+}
+
+.ProgressBar[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.ProgressBar[type="range"]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.ProgressBar[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+ */
+
+.ProgressBar[type="range"] {
+  -webkit-appearance: none;
+  height: 8px;
+  outline: none !important;
+  appearance: none;
+  border: none;
+  border-radius: 30px;
+}
+.ProgressBar[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+.ProgressBar[type="range"]:hover {
+  outline: none;
+}
+
+/* Chrome */
+
+.ProgressBar[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 30px;
+  outline: none;
+}
+
+/* Moz */
+
+.ProgressBar[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: red;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.ProgressBar[type="range"]::-moz-range-progress {
+  background-color: red;
+  height: 100%;
+  border-radius: 30px;
+  border: none;
+}
+.ProgressBar[type="range"]::-moz-range-track {
+  background-color: #ccc;
+  border-radius: 30px;
+  border: none;
+  height: 100%;
+}
+
+/* IE*/
+
+.ProgressBar[type="range"]::-ms-fill-lower {
+  background-color: red;
+  height: 100%;
+  border-radius: 30px;
+  border: none;
+}
+.ProgressBar[type="range"]::-ms-fill-upper {
+  background-color: #ccc;
+  border-radius: 30px;
+  border: none;
+  height: 100%;
+}

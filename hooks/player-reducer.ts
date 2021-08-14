@@ -1,4 +1,4 @@
-import { PlayerState } from "./audio-player-hook";
+import { PlayerState } from "./audio-player-context-hook";
 import { ActionType, PlayerActions } from "./player-actions";
 
 export const playerReducer = (
